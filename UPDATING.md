@@ -1,0 +1,13 @@
+From: https://socalledprogrammer.com/2022/11/08/host-your-own-mastodon-server.html
+ - **root:** `apt install shared-mime-info`
+ - **mastodon:** Update ruby to x.x.x with `RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install x.x.x`
+ - **mastodon:** `bundle install`
+ - **mastodon:** `yarn install`
+ - **mastodon:** `SKIP_POST_DEPLOYMENT_MIGRATIONS=true RAILS_ENV=production bundle exec rails db:migrate`
+ - **mastodon:** `RAILS_ENV=production bundle exec rails assets:clobber assets:precompile`
+ - **root:** `systemctl restart mastodon-sidekiq`
+ - **root:** `systemctl restart mastodon-web`
+ - **mastodon:** `RAILS_ENV=production bin/tootctl cache clear`
+ - **mastodon:** `RAILS_ENV=production bundle exec rails db:migrate`
+ - **root:** `systemctl restart mastodon-sidekiq`
+ - **root:** `systemctl restart mastodon-web`
