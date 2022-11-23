@@ -24,6 +24,9 @@ Click below to **learn more** in a video:
 
 [youtube_demo]: https://www.youtube.com/watch?v=IPSbNdBmWKE
 
+## Changes From Vanilla Mastodon
+ - Character limit increased to 10,000 (though composer will still warn with over 500 characters)
+
 ## Navigation
 
 - [Project homepage 🐘](https://joinmastodon.org)
